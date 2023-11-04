@@ -10,7 +10,7 @@ program.command('generate')
     .description('Generate a random password')
     .option('-l, --length <length>', 'Length of the password', '12')
     .option('-n, --numbers', 'Include numbers')
-    .option('s-, --special-chars', 'Include special characters')
+    .option('-s, --special-chars', 'Include special characters')
     .action((options) => {
     const { length, numbers, specialChars } = options;
     const charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
