@@ -5,5 +5,15 @@
   },
   "devDependencies": {
     "typescript": "^5.2.2"
-  }
+  },
+  "name": "cli-password-generator",
+  "description": "Test",
+  "version": "1.0.0",
+  "main": "generator.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
 }
