@@ -1,4 +1,7 @@
 {
+  "files": [
+    "app.ts"
+  ],
   "compilerOptions": {
     "moduleResolution": "NodeNext",
     "module": "NodeNext",
