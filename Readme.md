@@ -1,7 +1,5 @@
 # Password Generator CLI
 
-![GitHub](https://img.shields.io/github/license/SilvestreRenato/CLI-Password-Generator)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/SilvestreRenato/CLI-Password-Generator)
 ![GitHub repo size](https://img.shields.io/github/repo-size/SilvestreRenato/CLI-Password-Generator)
 
 Este é um Gerador de Senhas de Linha de Comando (CLI) que permite gerar senhas seguras e aleatórias de acordo com suas preferências.
