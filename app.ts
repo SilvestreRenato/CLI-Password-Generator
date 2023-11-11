@@ -25,21 +25,22 @@ program.command('generate')
   .option('-N, --no-numbers', 'Exclude numbers')
   .option('-S, --no-special-chars', 'Exclude special characters')
   .action((options) => {
-    const { length, numbers, specialChars } = options
-    const charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    const numbersCharset = '0123456789'
-    const specialCharset = '!@#$%^&*()_+'
+    const { length, uppercase, lowercase, numbers, specialChars } = options
 
-    let password = charset
-    if (numbers) password += numbersCharset
-    if (specialChars) password += specialCharset
+    const charset = uppercase ? 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' : '';
+    const numbersCharset = numbers ? '0123456789' : '';
+    const specialCharset = specialChars ? '!@#$%^&*()_+' : '';
 
-    let result = ''
-    for (let i = 0; i < length; i++) {
-      result += password.charAt(Math.floor(Math.random() * password.length))
+    let password = charset + (lowercase ? 'abcdefghijklmnopqrstuvwxyz' : '') + numbersCharset + specialCharset;
+    let shuffledCharset = shuffleString(password);
+
+    let result = '';
+    for (let i = 0; i < Number(length); i++) {
+      const j = Math.floor(Math.random() * shuffledCharset.length);
+      result += shuffledCharset.charAt(j);
     }
 
-    console.log('Generated Password:', result)
+    console.log('Generated Password:', result);
   })
 
 program.parse()
