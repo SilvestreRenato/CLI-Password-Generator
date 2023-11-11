@@ -20,8 +20,10 @@ program.command('generate')
 
   .description('Generate a random password')
   .option('-l, --length <length>', 'Length of the password', '12')
-  .option('-n, --numbers', 'Include numbers')
-  .option('-s, --special-chars', 'Include special characters')
+  .option('-U, --no-uppercase', 'Exclude uppercase letters')
+  .option('-L, --no-lowercase', 'Exclude lowercase letters')
+  .option('-N, --no-numbers', 'Exclude numbers')
+  .option('-S, --no-special-chars', 'Exclude special characters')
   .action((options) => {
     const { length, numbers, specialChars } = options
     const charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
