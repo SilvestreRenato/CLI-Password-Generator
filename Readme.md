@@ -21,6 +21,10 @@ Este CLI foi desenvolvido com Node.js e a biblioteca Commander para facilitar a 
 ## Requisitos
 
 - [Node.js](https://nodejs.org/) instalado na sua máquina.
+- Instalar dependências:
+```bash
+npm install commander
+```
 
 ## Instalação
 
@@ -30,9 +34,10 @@ Para usar o Password Generator CLI, você pode clonar este repositório e, em se
 npm install
 ```
 
+
 ## Uso
 
-Para gerar uma senha, use o comando generate seguido de opções:
+Para gerar uma senha, use o comando `generate` seguido de opções:
 
 ```bash
 node app.js generate [opções]
@@ -40,18 +45,28 @@ node app.js generate [opções]
 
 ## Opções
 
-- `-l, --length <length>: Define o comprimento da senha (padrão: 12).`
-- `-n, --numbers: Inclui números na senha.`
-- `-s, --special-chars: Inclui caracteres especiais na senha.`
+- `-l, --length <comprimento>: Especifique o comprimento da senha gerada (padrão: 12).`
+- `-U, --no-uppercase: Exclua letras maiúsculas da senha.`
+- `-L, --no-lowercase: Exclua letras minúsculas da senha.`
+- `-N, --no-numbers: Exclua números da senha.`
+- `-S, --no-special-chars: Exclua caracteres especiais da senha.`
 
 ## Exemplos
 
-- `Gerar uma senha de 16 caracteres com números e caracteres especiais:`
+1. Gere uma senha padrão:
 ```bash
-node app.js generate -l 16 -n -s
+node index.js generate
+```
+2. Gerar uma senha com comprimento especificado::
+```bash
+node index.js generate -l 16
+```
+3. Gerar uma senha sem letras maiúsculas e caracteres especiais:
+```bash
+node index.js generate --no-uppercase --no-special-chars
 ```
 
-- `Gerar uma senha de 8 caracteres sem números e caracteres especiais:`
-```bash
-node app.js generate -l 8
-```
+## Observações
+- O projeto é escrito em TypeScript e utiliza a biblioteca Commander para criar uma CLI amigável para geração de senhas.
+- Personalize a geração de senhas usando várias opções para atender a requisitos específicos.
+- Certifique-se de instalar as dependências antes de executar a CLI.
